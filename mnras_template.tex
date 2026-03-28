@@ -51,6 +51,8 @@
 % Only include extra packages if you really need them. Avoid using amssymb if newtxmath is enabled, as these packages can cause conflicts. newtxmatch covers the same math symbols while producing a consistent Times New Roman font. Common packages are:
 \usepackage{graphicx}	% Including figure files
 \usepackage{amsmath}	% Advanced maths commands
+\usepackage{tikz}
+\usepackage{graphicx}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -88,6 +90,12 @@ $^{1}$Edinburgh University Chamber Orchestra, Reid Concert Hall, Bristo Square, 
 \label{firstpage}
 \pagerange{\pageref{firstpage}--\pageref{lastpage}}
 \maketitle
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=north east, inner sep=0pt] 
+    at ([xshift=-2cm, yshift=-2cm]current page.north east) 
+    {\includegraphics[height=3.5cm]{euco-logo.png}};
+\end{tikzpicture}
 
 % Abstract of the paper
 \begin{abstract}
